@@ -1,10 +1,12 @@
 package com.exercise2;
 
+import java.util.Comparator;
+
 /**
  * This is a Student class which is derived from Human
  */
 public class Student extends Human {
-
+    public static Comparator<Student> StudentComparators = new StudentComparator();
     private String grade;
 
     /**
@@ -43,12 +45,4 @@ public class Student extends Human {
                 "grade='" + grade + '\'' +
                 '}';
     }
-
-    public static void main(String[] args) {
-        // create a student
-        Student student = new Student("Hoa", "Nguyen", "10");
-        System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getGrade());
-
-    }
-
 }

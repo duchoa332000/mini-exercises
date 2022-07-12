@@ -1,5 +1,7 @@
 package com.exercise2;
 
+import java.util.Comparator;
+
 /**
  * This is a class for Human
  */
@@ -62,4 +64,6 @@ public abstract class Human {
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
+
+    public static Comparator<Human> CompareHuman = new HumanComparator();
 }

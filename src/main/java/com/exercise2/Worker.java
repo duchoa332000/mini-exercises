@@ -1,13 +1,16 @@
 package com.exercise2;
 
+import java.util.Comparator;
+
 /**
  * Define class Worker derived from Human with new property WeekSalary and WorkHoursPerDay and method MoneyPerHour()
  * that returns money earned by hour by the worker.
  */
 public class Worker extends Human {
 
-    private double weekSalary;
-    private double workHoursPerDay;
+    public static Comparator<Worker> WorkerComparators = new WorkerComparator();
+    private Double weekSalary;
+    private int workHoursPerDay;
 
     // number of working day in one week
     private static final int WORKING_DAY_PER_WEEK = 5;
@@ -22,10 +25,36 @@ public class Worker extends Human {
      * @param weekSalary
      * @param workHoursPerDay
      */
-    public Worker(String firstName, String lastName, double weekSalary, double workHoursPerDay) {
+    public Worker(String firstName, String lastName, Double weekSalary, int workHoursPerDay) {
         super(firstName, lastName);
         this.weekSalary = weekSalary;
         this.workHoursPerDay = workHoursPerDay;
+    }
+
+    /**
+     * Get WeekSalary
+     *
+     * @return
+     */
+    public Double getWeekSalary() {
+        return weekSalary;
+    }
+
+    /**
+     * Set WeekSalary
+     *
+     * @param weekSalary
+     */
+    public void setWeekSalary(Double weekSalary) {
+        this.weekSalary = weekSalary;
+    }
+
+    @Override
+    public String toString() {
+        return "Worker{" +
+                "weekSalary=" + weekSalary +
+                ", workHoursPerDay=" + workHoursPerDay +
+                '}';
     }
 
     /**
@@ -33,8 +62,8 @@ public class Worker extends Human {
      *
      * @return
      */
-    public double calculateMoneyPerHour(double weekSalary) {
-        double moneyPerDay = weekSalary / WORKING_DAY_PER_WEEK;
+    public double calculateMoneyPerHour() {
+        Double moneyPerDay = weekSalary / WORKING_DAY_PER_WEEK;
         return moneyPerDay / WORKING_HOUR_PER_DAY;
     }
 

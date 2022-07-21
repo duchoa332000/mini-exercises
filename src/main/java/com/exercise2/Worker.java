@@ -9,13 +9,21 @@ import java.util.Comparator;
 public class Worker extends Human {
 
     public static Comparator<Worker> WorkerComparators = new WorkerComparator();
-    private Double weekSalary;
+    private double weekSalary;
     private int workHoursPerDay;
 
     // number of working day in one week
     private static final int WORKING_DAY_PER_WEEK = 5;
     // number of working hour in one day
     private static final int WORKING_HOUR_PER_DAY = 8;
+
+//    /**
+//     * @param firstName
+//     * @param lastName
+//     */
+//    public Worker(String firstName, String lastName) {
+//        super(firstName, lastName);
+//    }
 
     /**
      * Constructor
@@ -25,7 +33,7 @@ public class Worker extends Human {
      * @param weekSalary
      * @param workHoursPerDay
      */
-    public Worker(String firstName, String lastName, Double weekSalary, int workHoursPerDay) {
+    public Worker(String firstName, String lastName, double weekSalary, int workHoursPerDay) {
         super(firstName, lastName);
         this.weekSalary = weekSalary;
         this.workHoursPerDay = workHoursPerDay;
@@ -33,8 +41,6 @@ public class Worker extends Human {
 
     /**
      * Get WeekSalary
-     *
-     * @return
      */
     public Double getWeekSalary() {
         return weekSalary;
@@ -42,8 +48,6 @@ public class Worker extends Human {
 
     /**
      * Set WeekSalary
-     *
-     * @param weekSalary
      */
     public void setWeekSalary(Double weekSalary) {
         this.weekSalary = weekSalary;
@@ -54,13 +58,11 @@ public class Worker extends Human {
         return "Worker{" +
                 "weekSalary=" + weekSalary +
                 ", workHoursPerDay=" + workHoursPerDay +
-                '}';
+                "} " + super.toString();
     }
 
     /**
      * Calculate money per hour
-     *
-     * @return
      */
     public double calculateMoneyPerHour() {
         Double moneyPerDay = weekSalary / WORKING_DAY_PER_WEEK;

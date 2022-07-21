@@ -11,6 +11,6 @@ public class WorkerComparator implements Comparator<Worker> {
      */
     @Override
     public int compare(Worker o1, Worker o2) {
-        return o1.getWeekSalary().compareTo(o2.getWeekSalary());
+        return o2.getWeekSalary().compareTo(o1.getWeekSalary());
     }
 }

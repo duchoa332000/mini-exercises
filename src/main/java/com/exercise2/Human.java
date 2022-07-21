@@ -6,7 +6,7 @@ import java.util.Comparator;
  * This is a class for Human
  */
 public abstract class Human {
-
+    public static Comparator<Human> HumanComparators = new HumanComparator();
     private String firstName;
     private String lastName;
 
@@ -22,9 +22,9 @@ public abstract class Human {
     }
 
     /**
-     * Get first name
+     * Get fist name
      *
-     * @return
+     * @return firstName
      */
     public String getFirstName() {
         return firstName;
@@ -42,7 +42,7 @@ public abstract class Human {
     /**
      * Get last name
      *
-     * @return
+     * @return lastName
      */
     public String getLastName() {
         return lastName;
@@ -57,6 +57,11 @@ public abstract class Human {
         this.lastName = lastName;
     }
 
+    /**
+     * Method override toString of Human
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Human{" +
@@ -65,5 +70,8 @@ public abstract class Human {
                 '}';
     }
 
-    public static Comparator<Human> CompareHuman = new HumanComparator();
+//    public int compareTo(Human o) {
+//        return o.getFirstName().compareTo(o.getFirstName());
+//    }
+
 }

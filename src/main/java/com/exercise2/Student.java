@@ -7,7 +7,7 @@ import java.util.Comparator;
  */
 public class Student extends Human {
     public static Comparator<Student> StudentComparators = new StudentComparator();
-    private String grade;
+    private Integer grade;
 
     /**
      * Constructor
@@ -16,7 +16,7 @@ public class Student extends Human {
      * @param lastName
      * @param grade
      */
-    public Student(String firstName, String lastName, String grade) {
+    public Student(String firstName, String lastName, Integer grade) {
         super(firstName, lastName);
         this.grade = grade;
     }
@@ -24,9 +24,9 @@ public class Student extends Human {
     /**
      * Get grade
      *
-     * @return
+     * @return grade
      */
-    public String getGrade() {
+    public Integer getGrade() {
         return grade;
     }
 
@@ -35,14 +35,19 @@ public class Student extends Human {
      *
      * @param grade
      */
-    public void setGrade(String grade) {
+    public void setGrade(Integer grade) {
         this.grade = grade;
     }
 
+    /**
+     * Method override toString of Student
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Student{" +
                 "grade='" + grade + '\'' +
-                '}';
+                "} " + super.toString();
     }
 }

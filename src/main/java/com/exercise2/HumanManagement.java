@@ -45,7 +45,6 @@ public class HumanManagement {
         Worker worker8 = new Worker("Thien", "Nguyen", 850.0, 8);
         Worker worker9 = new Worker("Nhung", "Pham", 750.0, 7);
         Worker worker10 = new Worker("Phi", "Tran", 900.0, 8);
-//        List<Worker> listOfWorker = Arrays.asList(worker1, worker2, worker3, worker4, worker5, worker6, worker7, worker8, worker9, worker10);
         List<Worker> listOfWorker = new ArrayList<>();
         listOfWorker.add(worker1);
         listOfWorker.add(worker2);

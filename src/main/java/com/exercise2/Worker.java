@@ -16,15 +16,7 @@ public class Worker extends Human {
     private static final int WORKING_DAY_PER_WEEK = 5;
     // number of working hour in one day
     private static final int WORKING_HOUR_PER_DAY = 8;
-
-//    /**
-//     * @param firstName
-//     * @param lastName
-//     */
-//    public Worker(String firstName, String lastName) {
-//        super(firstName, lastName);
-//    }
-
+    
     /**
      * Constructor
      *

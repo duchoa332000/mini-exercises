@@ -247,9 +247,10 @@ public class GSM {
     //  method that calculates the total price of the calls in the call history
     public double calculatesTotalPrice(double pricePerMinute) {
         double result = 0;
+        int minute = 60;
         for (Call call : callHistory) {
             result += call.getDuration();
         }
-        return (result / 60) * pricePerMinute;
+        return (result / minute) * pricePerMinute;
     }
 }

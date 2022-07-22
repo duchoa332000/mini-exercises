@@ -2,6 +2,8 @@ package com.exercise3;
 
 import java.util.List;
 
+import static com.exercise3.Animals.calculateAnimal;
+
 public class AnimalsManagement {
     public static void main(String[] args) {
         // Create arrays of dog and calculate the average age
@@ -11,8 +13,7 @@ public class AnimalsManagement {
                         new Dog("Jack", 6, "female"),
                         new Dog("Aton", 3, "male"),
                         new Dog("Muc", 2, "female"),
-//                        new Dog("Mi", 6, "male"),
-//                        new Dog("Jay", 4, "male"),
+
                 };
         for (Animals animals : listOfAnimal) {
             System.out.println(animals.toString());
@@ -26,14 +27,12 @@ public class AnimalsManagement {
                         new Kitten("Ka", 4, ""),
                         new Kitten("Liu", 2, ""),
                         new Kitten("Gi", 6, ""),
-//                        new Kitten("Roe", 7, ""),
-//                        new Kitten("Loe", 4, "")
-
                 };
         for (Animals kittens : listOfKitten) {
             System.out.println(kittens.toString());
         }
         calculateAnimal(List.of(listOfKitten));
+
 
         // Create arrays of Tomcat and calculate the average age
         Tomcat[] listOfTomcats = {new Tomcat("Fi", 5, ""),
@@ -41,14 +40,12 @@ public class AnimalsManagement {
                 new Tomcat("Ri", 4, ""),
                 new Tomcat("Cu", 2, ""),
                 new Tomcat("Vus", 3, ""),
-//                new Tomcat("Ci", 6, ""),
-//                new Tomcat("Kay", 1, ""),
-
         };
         for (Animals tomcats : listOfTomcats) {
             System.out.println(tomcats.toString());
         }
         calculateAnimal(List.of(listOfTomcats));
+
 
         // Create arrays of Frog and calculate the average age
         Frog[] listOfFrog = {new Frog("Fui", 5, "male"),
@@ -63,19 +60,4 @@ public class AnimalsManagement {
         calculateAnimal(List.of(listOfFrog));
     }
 
-
-    /**
-     * Calculate age of each kind of animal
-     */
-    private static void calculateAnimal(List<Animals> listOfAnimal) {
-
-        double sum = 0;
-        double Avg;
-
-        for (Animals animals : listOfAnimal) {
-            sum += animals.age;
-        }
-        Avg = sum / 5;
-        System.out.println("Average: " + Avg);
-    }
 }

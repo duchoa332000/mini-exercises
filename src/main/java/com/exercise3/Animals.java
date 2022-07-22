@@ -1,5 +1,7 @@
 package com.exercise3;
 
+import java.util.List;
+
 /**
  * This is a class for Animals
  */
@@ -7,6 +9,8 @@ public class Animals {
     public String name;
     public int age;
     public String sex;
+
+    private static final int TOTAL_NUMBER_OF_ANIMAL = 5;
 
     /**
      * Contructer
@@ -87,5 +91,20 @@ public class Animals {
                 ", age=" + age +
                 ", sex='" + sex + '\'' +
                 '}';
+    }
+
+    /**
+     * Calculate age of each kind of animal
+     */
+    static void calculateAnimal(List<Animals> listOfAnimal) {
+
+        double sum = 0;
+        double Avg;
+
+        for (Animals animals : listOfAnimal) {
+            sum += animals.age;
+        }
+        Avg = sum / TOTAL_NUMBER_OF_ANIMAL;
+        System.out.println("Average: " + Avg);
     }
 }
